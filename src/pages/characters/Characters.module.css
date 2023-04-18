@@ -1,0 +1,16 @@
+.char{
+    color: yellow;
+    display: grid;
+    grid-template-columns: repeat(3, 5fr);
+    text-decoration: none;
+}
+
+.cards{
+    border:1px solid white;
+    border-radius: 16px;
+}
+
+.title{
+    font-style: italic;
+    color: yellow;
+}

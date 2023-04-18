@@ -1,0 +1,26 @@
+body{
+    background-image: url(https://res.cloudinary.com/dldclv2km/image/upload/v1681847415/b18d2aa82ffba40af3a6a2168eab4ffc_ozifad.jpg);
+}
+.card {
+    padding: 15px;
+    border: 1px solid yellow;
+    border-radius: 40px;
+}
+.main{
+    display: grid;
+    grid-template-columns: repeat(2, 5fr);
+    text-decoration: none;
+    color: #fff;
+}
+.button{
+    font-size: large;
+    padding: 10px;
+    border-radius: 9999px;
+}
+button:hover{
+    cursor: pointer;
+}
+.title{
+    font-style: italic;
+    color: rgb(241, 241, 11);
+}
