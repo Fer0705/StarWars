@@ -12,17 +12,15 @@ export const GET_ALL_FILMS = "GET_ALL_FILMS";
 //   }
 
 export function getAllFilms() {
-  return function(dispatch) {
-    return axios.get("https://swapi.dev/api/films")
-      .then(response => {
-        dispatch({
-          type: GET_ALL_FILMS,
-          payload: response.data,
-        });
-      })
-      .catch(error => {
-        console.log(error);
-        // Manejo de errores
+  return async function(dispatch) {
+    try {
+      const response = await axios.get("https://swapi.dev/api/films");
+      dispatch({
+        type: GET_ALL_FILMS,
+        payload: response.data,
       });
+    } catch (error) {
+      console.log(error);
+    }
   };
 }
