@@ -2,25 +2,26 @@ body{
     background-image: url(https://res.cloudinary.com/dldclv2km/image/upload/v1681847415/b18d2aa82ffba40af3a6a2168eab4ffc_ozifad.jpg);
 }
 .card {
-    padding: 15px;
+   
+    padding: 25px;
     border: 1px solid yellow;
-    border-radius: 40px;
+    border-radius: 80px;
+    /* background-image: url(https://imgs.search.brave.com/KK-ufS7Uv1xEdbDqJTsqvA5S6KZuw2bpKQ6jGuJC2YE/rs:fit:500:382:1/g:ce/aHR0cHM6Ly9iZXN0/YW5pbWF0aW9ucy5j/b20vU2NpLUZpL1N0/YXJXYXJzL3N0YXIt/d2Fycy1hbmltYXRl/ZC1naWYtNDAuZ2lm.gif); */
 }
 .main{
     display: grid;
-    grid-template-columns: repeat(2, 5fr);
-    text-decoration: none;
-    color: #fff;
+    grid-template-columns: repeat(3, 5fr);
+    color: yellow;
+    font-weight: bold;
+    font-size: large;
+  -webkit-text-stroke: 1px black;
+
 }
 .button{
     font-size: large;
     padding: 10px;
-    border-radius: 9999px;
+    border-radius: 99px;
 }
-button:hover{
+.button:hover{
     cursor: pointer;
-}
-.title{
-    font-style: italic;
-    color: rgb(241, 241, 11);
 }

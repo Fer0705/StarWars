@@ -59,7 +59,7 @@ function Films() {
 
   return (
     <>
-      <h1 className={style.title}> LISTADO DE FILMS</h1>
+      {/* <h1 className={style.title}> LISTADO DE FILMS</h1> */}
       <div className={style.main}>
         {allFilms ? (
           allFilms.map((f) => (
@@ -75,7 +75,8 @@ function Films() {
                 }/characters`}
               >
                 <button className={style.button}>
-                  {`ver los ${f.characters.length} personajes del film`}
+                  {/* {`ver los ${f.characters.length} personajes del film`} */}
+                  Personajes
                 </button>
               </Link>
             </div>
@@ -84,6 +85,10 @@ function Films() {
           <p>Cargando...</p>
         )}
       </div>
+      {/* <img
+        src="https://imgs.search.brave.com/KK-ufS7Uv1xEdbDqJTsqvA5S6KZuw2bpKQ6jGuJC2YE/rs:fit:500:382:1/g:ce/aHR0cHM6Ly9iZXN0/YW5pbWF0aW9ucy5j/b20vU2NpLUZpL1N0/YXJXYXJzL3N0YXIt/d2Fycy1hbmltYXRl/ZC1naWYtNDAuZ2lm.gif"
+        alt="gif"
+      /> */}
     </>
   );
 }
