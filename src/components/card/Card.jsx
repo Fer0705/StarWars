@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 export default function Card({ nombre, numDeEpisodio, director, personajes }) {
   return (
     <div className={style.card}>
-      <h3>Episodio Nro: {numDeEpisodio} </h3>
+      <h3>Episode: {numDeEpisodio} </h3>
       <h1> {nombre}</h1>
       <h3>Director: {director}</h3>
       <Link
@@ -13,7 +13,7 @@ export default function Card({ nombre, numDeEpisodio, director, personajes }) {
           numDeEpisodio <= 3 ? numDeEpisodio + 3 : numDeEpisodio - 3
         }/characters`}
       >
-        <button className={style.button}>Ver Personajes</button>
+        <button className={style.button}>See Characters</button>
       </Link>
     </div>
   );

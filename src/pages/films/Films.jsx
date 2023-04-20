@@ -3,8 +3,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { getAllFilms } from "../../redux/actions";
 import Card from "../../components/card/Card";
 import { Link } from "react-router-dom";
-import style from "./Films.module.css";
 import Logito from "../../utils/logito.png";
+import style from "./Films.module.css";
 import image1 from "../../utils/images/episode4.jpg";
 import image2 from "../../utils/images/episode5.jpg";
 import image3 from "../../utils/images/episode6.jpg";
@@ -16,8 +16,6 @@ function Films() {
   const dispatch = useDispatch();
   const films = useSelector((state) => state.films);
   const allFilms = films.results;
-
-  console.log("TODAS LAS PELIS", allFilms);
 
   useEffect(() => {
     dispatch(getAllFilms());

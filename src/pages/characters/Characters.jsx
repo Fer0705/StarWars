@@ -118,23 +118,44 @@ function Characters() {
         />
       </Link>
       <div className={style.filter}>
+        <label
+          htmlFor="filter"
+          className={style.label}
+          style={{ color: "yellow" }}
+        >
+          Gender:
+        </label>
         <div className={style.gender}>
-          <label htmlFor="filter" className={style.label}>
-            Gender:
-          </label>
-          <select id="filter" value={filter} onChange={handleFilterChange}>
+          {/* <select id="filter" value={filter} onChange={handleFilterChange}>
             {options.map((o) => (
               <option key={o.value} value={o.value}>
                 {o.label}
               </option>
             ))}
-          </select>
+          </select> */}
+          {options.map((o) => (
+            <label className={style.label} key={o.value}>
+              <input
+                type="radio"
+                style={{ backgroundColor: "yellow" }}
+                name="filter"
+                value={o.value}
+                checked={filter === o.value}
+                onChange={handleFilterChange}
+              />
+              {o.label}
+            </label>
+          ))}
         </div>
+        <label
+          htmlFor="filter-eyes"
+          className={style.label}
+          style={{ color: "yellow" }}
+        >
+          Eye Color:
+        </label>
         <div className={style.eyecolor}>
-          <label htmlFor="filter-eyes" className={style.label}>
-            Eye Color:
-          </label>
-          <select
+          {/* <select
             id="filter-eyes"
             value={filterEyes}
             onChange={handleEyeColorFilterChange}
@@ -145,7 +166,29 @@ function Characters() {
                 {color}
               </option>
             ))}
-          </select>
+          </select> */}
+          <label className={style.label}>
+            <input
+              type="radio"
+              name="filterEyes"
+              value=""
+              checked={filterEyes === ""}
+              onChange={handleEyeColorFilterChange}
+            />
+            All
+          </label>
+          {eyeColors.map((color) => (
+            <label className={style.label} key={color}>
+              <input
+                type="radio"
+                name="filterEyes"
+                value={color}
+                checked={filterEyes === color}
+                onChange={handleEyeColorFilterChange}
+              />
+              {color}
+            </label>
+          ))}
         </div>
       </div>
       <div className={style.char}>
@@ -160,7 +203,9 @@ function Characters() {
             </div>
           ))
         ) : (
-          <h3>No se encontraron personajes</h3>
+          <div style={{ gridColumn: "1/-1" }}>
+            <h3>No characters found</h3>
+          </div>
         )}
       </div>
     </>

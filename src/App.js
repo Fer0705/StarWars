@@ -23,6 +23,7 @@ import './App.css';
 import React, { lazy, Suspense } from 'react'
 import { Routes, Route } from "react-router-dom";
 import Loader from './components/loader/Loader'
+import Notfound from './pages/notfound/Notfound.jsx'
 const LazyLanding = lazy(() => import('./components/landing/LandingPage'));
 const LazyFilms = lazy(() => import('./pages/films/Films'));
 const LazyCharacters = lazy(() => import('./pages/characters/Characters'));
@@ -31,7 +32,7 @@ function App() {
   return (
     <div className="App">
       <Routes>
-        {/* <Route path="/" element={<LandingPage />} /> */}
+        <Route path="*" element={<Notfound/>} />
         <Route path="/" element={
           <Suspense fallback={<Loader/>}>
             <LazyLanding />

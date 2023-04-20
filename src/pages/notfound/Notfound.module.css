@@ -1,0 +1,8 @@
+.error{
+    display: flex;
+    flex-direction: column;
+}
+.back:hover{
+  opacity: 0.8;
+
+}
