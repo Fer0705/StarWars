@@ -1,73 +1,94 @@
-/* body{
-    font-family: 'Star Jedi', sans-serif;
-} */
-@import url('https://fonts.googleapis.com/css2?family=Aboreto&display=swap');
-.container{
-    display: flex;
-    flex-direction: row;
-}
-.char{
+@import url("https://fonts.googleapis.com/css2?family=Aboreto&display=swap");
+
+.char {
     color: rgb(236, 236, 57);
     display: grid;
-    grid-template-columns: repeat(4, 5fr);
     text-decoration: none;
-    font-family: 'Aboreto', cursive;
-}
-
-.cards{
-    border:1px solid white;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    font-family: "Aboreto", cursive;
+  }
+  
+  .cards {
     border-radius: 16px;
-  box-shadow: 20px 20px 22px rgba(231, 101, 101, 0.3);
-  margin: 30px 30px 60px 40px;
-  object-fit: cover;
-  transition: transform 1.5s ease-in-out;
-  height: 200px;
-  width: 300px;
-}
-
-.cards:hover{
-    transform: scale(1.2); 
+    margin: 2.5% 5%;
+    object-fit: cover;
+    transition: transform 1.5s ease-in-out;
+    height: 90%;
+    width: 90%;
+    max-width: auto;
+    border: 1px solid white;
+  }
+  
+  .cards:hover {
+    transform: scale(1.2);
     rotate: (180deg);
-    background-color: rgba(231, 101, 101, 0.3);
-}
-
-.title{
+  }
+  
+  .title {
     font-style: italic;
     color: rgb(236, 236, 198);
-}
-.label{
+  }
+  
+  .label {
     display: flex;
     align-content: flex-start;
     justify-content: flex-start;
     color: rgb(236, 236, 225);
-    font-size: 20px;
-    margin-left: 19px;
+    font-size: 16px;
+    margin-left: 10px;
+    margin-bottom: 5px;
     font-weight: 400;
-}
-.logo:hover{
+  }
+  
+  .logo:hover {
     opacity: 0.8;
   }
-
-  /* .filter select{
-    padding: 6px;
-    font-size: 15px;
-    margin-left: 9px;
-    border-radius: 8px;
-    background-color: rgb(117, 62, 245);
-    font-weight: 400;
-} */
-
-.gender {
+  
+  .gender {
     display: flex;
     flex-direction: column;
-}
-.eyecolor {
-    display: grid;
-    grid-template-columns: repeat(2, 5fr);
-}
-.filter{
+    max-width: 100%;
+  }
+  
+  .gender input {
+    margin-bottom: 10px;
+  }
+  
+  .filter {
     display: flex;
     flex-direction: row;
     justify-content: center;
     margin-right: 10px;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  /* .cont{
+    display: flex;
+    flex-direction: column;
+  } */
+  .eyecolor {
+    display: flex;
+    flex-direction: column;
+  max-width: 100%;
 }
+
+.eyecolor input {
+  margin-bottom: 10px;
+}
+
+@media (max-width: 1800px) {
+  .eyecolor {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .cont{
+    display: grid;
+    grid-template-columns: repeat(2, 5fr);
+  }
+}
+@media screen and (max-width: 600px) {
+    .char {
+      font-size: 22px;
+    }
+  }
+  

@@ -126,13 +126,6 @@ function Characters() {
           Gender:
         </label>
         <div className={style.gender}>
-          {/* <select id="filter" value={filter} onChange={handleFilterChange}>
-            {options.map((o) => (
-              <option key={o.value} value={o.value}>
-                {o.label}
-              </option>
-            ))}
-          </select> */}
           {options.map((o) => (
             <label className={style.label} key={o.value}>
               <input
@@ -147,36 +140,26 @@ function Characters() {
             </label>
           ))}
         </div>
-        <label
-          htmlFor="filter-eyes"
-          className={style.label}
-          style={{ color: "yellow" }}
-        >
-          Eye Color:
-        </label>
-        <div className={style.eyecolor}>
-          {/* <select
-            id="filter-eyes"
-            value={filterEyes}
-            onChange={handleEyeColorFilterChange}
+        <div className={style.cont}>
+          <label
+            htmlFor="filter-eyes"
+            className={style.label}
+            style={{ color: "yellow" }}
           >
-            <option value="">All</option>
-            {eyeColors.map((color) => (
-              <option key={color} value={color}>
-                {color}
-              </option>
-            ))}
-          </select> */}
-          <label className={style.label}>
-            <input
-              type="radio"
-              name="filterEyes"
-              value=""
-              checked={filterEyes === ""}
-              onChange={handleEyeColorFilterChange}
-            />
-            All
+            Eye Color:
           </label>
+          <div className={style.eyecolor}>
+            <label className={style.label}>
+              <input
+                type="radio"
+                name="filterEyes"
+                value=""
+                checked={filterEyes === ""}
+                onChange={handleEyeColorFilterChange}
+              />
+              All
+            </label>
+          </div>
           {eyeColors.map((color) => (
             <label className={style.label} key={color}>
               <input
