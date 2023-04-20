@@ -37,7 +37,6 @@ function Films() {
           allFilms.map((f) => (
             <div key={f.title} className={style.card}>
               <div className={style.cardfront}>
-                {/* <p>{f.title}</p> */}
                 <img
                   src={
                     f.episode_id === 1
