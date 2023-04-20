@@ -1,19 +1,29 @@
-/* Imagen con transición */
 img {
-    transition: transform 1.5s ease-in-out;
+  max-width: 100%;
+  height: auto;
+  transition: transform 1.5s ease-in-out;
+}
+
+img:hover {
+  transform: scale(1.3);
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media only screen and (max-width: 470px) {
+  img {
+    max-width: 100%;
+    height: auto;
   }
   
-  /* Imagen al pasar el mouse encima */
-  img:hover {
-    transform: scale(1.3) ;
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40%; 
   }
-  
-  /* Media queries */
-  @media only screen and (max-width: 768px) {
-    /* Ajuste para pantallas más pequeñas */
-    img {
-      max-width: 100%;
-      height: auto;
-    }
-  }
-  
+}
