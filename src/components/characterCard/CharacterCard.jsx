@@ -9,18 +9,16 @@ export default function Card({ name, gender, eye_color }) {
           style={{
             fontWeight: "bold",
             fontStyle: "italic",
-            // boxShadow: "12px 12px 12px #fff",
           }}
         >
-          {" "}
           {name}
         </h2>
         <div className={style.infoContainer}>
-          <p>
-            <u>Gender:</u> <strong>{gender}</strong>{" "}
-          </p>
           <p style={{ marginLeft: "3px" }}>
-            <u>Eye color:</u> <strong>{eye_color}</strong>
+            Eye color: <strong style={{ color: "white" }}>{eye_color}</strong>
+          </p>
+          <p>
+            Gender: <strong style={{ color: "white" }}>{gender}</strong>
           </p>
         </div>
       </div>

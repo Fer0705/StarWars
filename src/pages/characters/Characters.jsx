@@ -57,7 +57,6 @@ function Characters() {
         const charactersData = await Promise.all(promises);
         setCharacters(charactersData);
 
-        // Obtener opciones de color de ojos
         const eyeColors = charactersData.reduce((acc, c) => {
           if (!acc.includes(c.eye_color.split(",")[0])) {
             acc.push(c.eye_color.split(",")[0]);
@@ -80,7 +79,6 @@ function Characters() {
     setFilterEyes(event.target.value);
   };
 
-  // Modificación para mostrar todos los personajes antes de aplicar el filtro
   let filteredCharacters = characters;
   if (filter) {
     filteredCharacters = characters.filter(
@@ -94,7 +92,6 @@ function Characters() {
     );
   }
 
-  // Nueva variable para mostrar los personajes en la vista
   const displayedCharacters =
     filteredCharacters.length > 0 ? filteredCharacters : null;
 

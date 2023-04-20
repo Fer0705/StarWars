@@ -14,7 +14,7 @@ export default function Notfound() {
           </Link>
         </div>
         <div style={{ textAlign: "center" }}>
-          <img src={notfound} alt="notfound" width={"800px"} height={"600px"} />
+          <img src={notfound} alt="notfound" width={"100%"} height={"600px"} />
         </div>
       </div>
     </>

@@ -10,13 +10,13 @@
   
   .cards {
     border-radius: 16px;
-    margin: 2.5% 5%;
+    margin: 12% 5%;
     object-fit: cover;
     transition: transform 1.5s ease-in-out;
     height: 90%;
     width: 90%;
     max-width: auto;
-    border: 1px solid white;
+    border: 2px solid white;
   }
   
   .cards:hover {
@@ -87,8 +87,16 @@
   }
 }
 @media screen and (max-width: 600px) {
-    .char {
-      font-size: 22px;
-    }
+  .char {
+    font-size: 22px;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .gender{
+    display: grid;
+    grid-template-columns: repeat(2, 5fr);
+  }
+    
   }
   
