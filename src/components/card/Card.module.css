@@ -1,0 +1,20 @@
+.card{
+    width: 350px;
+    height: 250px;
+}
+.button {
+    border: none;
+    padding: 10px 20px;
+    background: #ffd700;
+    color: #000;
+    border-radius: 40px;
+    position: relative;
+    overflow: hidden;
+    font-size: large;
+  }
+  
+  .button:hover {
+    cursor: pointer;
+    background: #5f5a5a;
+    color: yellow;
+  }

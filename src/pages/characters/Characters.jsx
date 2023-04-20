@@ -3,7 +3,8 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import CharacterCard from "../../components/characterCard/CharacterCard";
 import style from "./Characters.module.css";
-
+import Logito from "../../utils/logito.png";
+import { Link } from "react-router-dom";
 function Characters() {
   const { id } = useParams();
   const [characters, setCharacters] = useState([]);
@@ -98,43 +99,54 @@ function Characters() {
     filteredCharacters.length > 0 ? filteredCharacters : null;
 
   const options = [
-    { value: "", label: "Todos" },
-    { value: "male", label: "Masculino" },
-    { value: "female", label: "Femenino" },
+    { value: "", label: "All" },
+    { value: "male", label: "Male" },
+    { value: "female", label: "Female" },
     { value: "hermaphrodite", label: "Hermaphrodite" },
-    { value: "n/a", label: "Desconocido" },
+    { value: "n/a", label: "Unknow" },
   ];
 
   return (
     <>
-      <h1 className={style.title}>PERSONAJES DE LA PELICULA</h1>
-      <div>
-        <label htmlFor="filter" className={style.label}>
-          Filtrar por género:
-        </label>
-        <select id="filter" value={filter} onChange={handleFilterChange}>
-          {options.map((o) => (
-            <option key={o.value} value={o.value}>
-              {o.label}
-            </option>
-          ))}
-        </select>
-
-        <label htmlFor="filter-eyes" className={style.label}>
-          Filtrar por color de ojos:
-        </label>
-        <select
-          id="filter-eyes"
-          value={filterEyes}
-          onChange={handleEyeColorFilterChange}
-        >
-          <option value="">Todos</option>
-          {eyeColors.map((color) => (
-            <option key={color} value={color}>
-              {color}
-            </option>
-          ))}
-        </select>
+      <Link to="/films">
+        <img
+          className={style.logo}
+          src={Logito}
+          alt="logo"
+          width={"100px"}
+          height={"100px"}
+        />
+      </Link>
+      <div className={style.filter}>
+        <div className={style.gender}>
+          <label htmlFor="filter" className={style.label}>
+            Gender:
+          </label>
+          <select id="filter" value={filter} onChange={handleFilterChange}>
+            {options.map((o) => (
+              <option key={o.value} value={o.value}>
+                {o.label}
+              </option>
+            ))}
+          </select>
+        </div>
+        <div className={style.eyecolor}>
+          <label htmlFor="filter-eyes" className={style.label}>
+            Eye Color:
+          </label>
+          <select
+            id="filter-eyes"
+            value={filterEyes}
+            onChange={handleEyeColorFilterChange}
+          >
+            <option value="">All</option>
+            {eyeColors.map((color) => (
+              <option key={color} value={color}>
+                {color}
+              </option>
+            ))}
+          </select>
+        </div>
       </div>
       <div className={style.char}>
         {filteredCharacters.length > 0 ? (

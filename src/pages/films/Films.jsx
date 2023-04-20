@@ -1,50 +1,16 @@
-// import { useEffect } from "react";
-// import { useDispatch, useSelector } from "react-redux";
-// import { getAllFilms } from "../redux/actions";
-// import Card from "../components/card/Card";
-
-// function Films() {
-//   const dispatch = useDispatch();
-//   const films = useSelector((state) => state.films);
-//   const allFilms = films.results;
-
-//   console.log("TODAS LAS PELIS", allFilms);
-
-//   useEffect(() => {
-//     dispatch(getAllFilms());
-//   }, [dispatch]);
-
-//   return (
-//     // Renderizado del componente
-//     <>
-//       <p> LISTADO DE FILMS</p>
-//       <div>
-//         {allFilms ? (
-//           allFilms.map((f) => (
-//             <div key={f.episode_id}>
-//               <Card
-//                 nombre={f.title}
-//                 numDeEpisodio={f.episode_id}
-//                 director={f.director}
-//                 personajes={f.url}
-//               />
-//             </div>
-//           ))
-//         ) : (
-//           <p>Cargando...</p>
-//         )}
-//       </div>
-//     </>
-//   );
-// }
-
-// export default Films;
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllFilms } from "../../redux/actions";
 import Card from "../../components/card/Card";
 import { Link } from "react-router-dom";
 import style from "./Films.module.css";
+import Logito from "../../utils/logito.png";
+import image1 from "../../utils/images/episode4.jpg";
+import image2 from "../../utils/images/episode5.jpg";
+import image3 from "../../utils/images/episode6.jpg";
+import image4 from "../../utils/images/episode1.jpg";
+import image5 from "../../utils/images/episode2.jpg";
+import image6 from "../../utils/images/episode3.jpg";
 
 function Films() {
   const dispatch = useDispatch();
@@ -59,36 +25,52 @@ function Films() {
 
   return (
     <>
-      {/* <h1 className={style.title}> LISTADO DE FILMS</h1> */}
+      <Link to="/">
+        <img
+          className={style.logo}
+          src={Logito}
+          alt="logo"
+          width={"100px"}
+          height={"100px"}
+        />
+      </Link>
       <div className={style.main}>
-        {allFilms ? (
+        {allFilms &&
           allFilms.map((f) => (
             <div key={f.title} className={style.card}>
-              <Card
-                nombre={f.title}
-                numDeEpisodio={f.episode_id}
-                director={f.director}
-              />
-              <Link
-                to={`/films/${
-                  f.episode_id <= 3 ? f.episode_id + 3 : f.episode_id - 3
-                }/characters`}
-              >
-                <button className={style.button}>
-                  {/* {`ver los ${f.characters.length} personajes del film`} */}
-                  Personajes
-                </button>
-              </Link>
+              <div className={style.cardfront}>
+                {/* <p>{f.title}</p> */}
+                <img
+                  src={
+                    f.episode_id === 1
+                      ? image4
+                      : f.episode_id === 2
+                      ? image5
+                      : f.episode_id === 3
+                      ? image6
+                      : f.episode_id === 4
+                      ? image1
+                      : f.episode_id === 5
+                      ? image2
+                      : f.episode_id === 6
+                      ? image3
+                      : null
+                  }
+                  alt="logo"
+                  height={"300px"}
+                  width={"280px"}
+                />
+              </div>
+              <div className={style.cardback}>
+                <Card
+                  nombre={f.title}
+                  numDeEpisodio={f.episode_id}
+                  director={f.director}
+                />
+              </div>
             </div>
-          ))
-        ) : (
-          <p>Cargando...</p>
-        )}
+          ))}
       </div>
-      {/* <img
-        src="https://imgs.search.brave.com/KK-ufS7Uv1xEdbDqJTsqvA5S6KZuw2bpKQ6jGuJC2YE/rs:fit:500:382:1/g:ce/aHR0cHM6Ly9iZXN0/YW5pbWF0aW9ucy5j/b20vU2NpLUZpL1N0/YXJXYXJzL3N0YXIt/d2Fycy1hbmltYXRl/ZC1naWYtNDAuZ2lm.gif"
-        alt="gif"
-      /> */}
     </>
   );
 }
