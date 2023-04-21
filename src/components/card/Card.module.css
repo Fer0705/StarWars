@@ -15,6 +15,6 @@
   
   .button:hover {
     cursor: pointer;
-    background: #5f5a5a;
-    color: yellow;
+    background: white;
+    opacity: 0.8;
   }
